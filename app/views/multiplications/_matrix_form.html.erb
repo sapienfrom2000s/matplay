@@ -1,0 +1,6 @@
+  <% (1..rows).each do |row| %>
+    <% (1..columns).each do |column| %>
+        <%= form.number_field "#{name}-#{row}-#{column}"%>
+    <% end %>
+    <br>
+  <% end %>

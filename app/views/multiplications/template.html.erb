@@ -1,20 +1,15 @@
-
-<%= form_with url: multiplication_result_path, method: :get do |form| %>
+<%= form_with scope: :matrix, url: multiplication_result_path, method: :get do |form| %>
   Matrix A
   <br>
-  <% (1..@row_a).each do |row| %>
-    <% (1..@column_a).each do |column| %>
-        <%= form.number_field "cell-A-#{row}#{column}"%>
-    <% end %>
-    <br>
-  <% end %>
+  <%= render partial: "matrix_form", locals: {rows: @row_a, columns: @column_a, name: 'A', form: } %>
 
   Matrix B
   <br>
-  <% (1..@row_b).each do |row| %>
-    <% (1..@column_b).each do |column| %>
-        <%= form.number_field "cell-B-#{row}#{column}"%>
-    <% end %>
-    <br>
-  <% end %>
+  <%= render partial: "matrix_form", locals: {rows: @row_b, columns: @column_b, name: 'B', form: } %>
+  <br>
+  <%= form.hidden_field :row_a, value: @row_a %>
+  <%= form.hidden_field :row_b, value: @row_b %>
+  <%= form.hidden_field :column_a, value: @column_a %>
+  <%= form.hidden_field :column_b, value: @column_b %>
+  <%= form.submit 'Generate Result'%>
 <% end %>  

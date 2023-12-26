@@ -13,10 +13,18 @@ class MultiplicationsController < ApplicationController
   end
 
   def result
+    @matrix_a = Mat.form('A', matrix_values, matrix_values[:row_a].to_i, matrix_values[:column_a].to_i)
+    @matrix_b = Mat.form('B', matrix_values, matrix_values[:row_b].to_i, matrix_values[:column_b].to_i)
+
+    @matrix_c = Mat.product(@matrix_a, @matrix_b)
   end
 
   private
     def matrix_params
       params.permit('row-A', 'row-B', 'column-A', 'column-B')
+    end
+
+    def matrix_values
+      params.require(:matrix).permit!
     end
 end
