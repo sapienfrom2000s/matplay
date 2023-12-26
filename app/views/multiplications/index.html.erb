@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Multiplications</h1>
+
+<div id="multiplications">
+  <% @multiplications.each do |multiplication| %>
+    <%= render multiplication %>
+    <p>
+      <%= link_to "Show this multiplication", multiplication %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New multiplication", new_multiplication_path %>

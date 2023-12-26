@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @multiplication %>
+
+<div>
+  <%= link_to "Edit this multiplication", edit_multiplication_path(@multiplication) %> |
+  <%= link_to "Back to multiplications", multiplications_path %>
+
+  <%= button_to "Destroy this multiplication", @multiplication, method: :delete %>
+</div>
