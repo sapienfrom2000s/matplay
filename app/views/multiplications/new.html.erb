@@ -1,9 +1,12 @@
-<h1>New multiplication</h1>
+<%= form_with url: multiplication_template_path, method: :get do |form| %>
+  <%= form.label 'row-A', 'rows' %>
+  <%= form.number_field 'row-A', min: '1', value: '1' %>
+  <%= form.label 'column-A', 'columns' %>
+  <%= form.number_field 'column-A', min: '1', value: '1' %>
 
-<%= render "form", multiplication: @multiplication %>
-
-<br>
-
-<div>
-  <%= link_to "Back to multiplications", multiplications_path %>
-</div>
+  <%= form.label 'row-B', 'rows' %>
+  <%= form.number_field 'row-B', min: '1', value: '1' %>
+  <%= form.label 'column-B', 'columns' %>
+  <%= form.number_field 'column-B', min: '1', value: '1' %>
+  <%= form.submit 'Generate Template'%>
+<% end %>
