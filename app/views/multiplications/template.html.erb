@@ -1,0 +1,20 @@
+
+<%= form_with url: multiplication_result_path, method: :get do |form| %>
+  Matrix A
+  <br>
+  <% (1..@row_a).each do |row| %>
+    <% (1..@column_a).each do |column| %>
+        <%= form.number_field "cell-A-#{row}#{column}"%>
+    <% end %>
+    <br>
+  <% end %>
+
+  Matrix B
+  <br>
+  <% (1..@row_b).each do |row| %>
+    <% (1..@column_b).each do |column| %>
+        <%= form.number_field "cell-B-#{row}#{column}"%>
+    <% end %>
+    <br>
+  <% end %>
+<% end %>  
