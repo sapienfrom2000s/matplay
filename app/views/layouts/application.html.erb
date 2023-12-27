@@ -11,11 +11,17 @@
   </head>
 
   <body>
-  <% flash.each do |type, msg| %>
-    <div align='center'>
-      <%= msg %>
+
+  <section class="hero is-success is-fullheight">
+    <div class="hero-body">
+        <% flash.each do |type, msg| %>
+          <div align='center'>
+            <%= msg %>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
     </div>
-  <% end %>
-  <%= yield %>
+  </section>
   </body>
 </html>

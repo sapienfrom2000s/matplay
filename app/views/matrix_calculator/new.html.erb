@@ -1,12 +1,30 @@
 <%= form_with url: matrix_calculator_template_path, data: { turbo: false } do |form| %>
-  <%= form.label 'row-A', 'rows' %>
-  <%= form.number_field 'row-A', min: '1', required: :true %>
-  <%= form.label 'column-A', 'columns' %>
-  <%= form.number_field 'column-A', min: '1', required: :true %>
+  <div class='card'>
+    <div class='card-content'>
+    <h1 class='is-size-5'>Matrix A</h1>
+    <div class='box'>
+      <%= form.label 'row-A', 'Rows' %>
+      <%= form.number_field 'row-A', min: '1', required: :true, :class => ['input', 'is-primary'], width: '1' %>
+    </div>
+    <div class='box'>
+    <%= form.label 'column-A', 'Columns' %>
+    <%= form.number_field 'column-A', min: '1', required: :true, :class => ['input', 'is-primary'], width: '1' %>
+  </div>
+  </div>
 
-  <%= form.label 'row-B', 'rows' %>
-  <%= form.number_field 'row-B', min: '1', required: :true%>
-  <%= form.label 'column-B', 'columns' %>
-  <%= form.number_field 'column-B', min: '1', required: :true%>
-  <%= form.submit 'Generate Template'%>
+    <div class='card'>
+    <div class='card-content'>
+    <h1 class='is-size-5'>Matrix B</h1>
+    <div class='box'>
+      <%= form.label 'row-B', 'Rows' %>
+      <%= form.number_field 'row-B', min: '1', required: :true, :class => ['input', 'is-primary']%>
+    </div>
+    <div class='box'>
+      <%= form.label 'column-B', 'Columns' %>
+      <%= form.number_field 'column-B', min: '1', required: :true, :class => ['input', 'is-primary']%>
+    </div>
+  </div>
+    <div class="box has-text-centered">
+      <%= form.submit 'Generate Template', :class=> ['button', 'is-primary']%>
+    </div>
 <% end %>
