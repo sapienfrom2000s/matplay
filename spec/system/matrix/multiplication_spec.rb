@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Matrix", type: :system do
   describe "multiplication" do
     it "gives product of A.B" do
-      visit new_multiplication_path
+      visit new_matrix_calculator_path
 
       fill_in 'row-A', with: 4
       fill_in 'column-A', with: 2
@@ -29,7 +29,7 @@ RSpec.describe "Matrix", type: :system do
       fill_in 'matrix_B-2-2', with: 7
       fill_in 'matrix_B-2-3', with: 0
 
-      click_button 'Generate Result'
+      click_button 'Multiply'
       expect(page).to have_content('27 14 6').and have_content('45 21 10')
       .and have_content('63 21 14').and have_content('9 0 2')
     end
