@@ -8,6 +8,11 @@ class MatrixCalculatorController < ApplicationController
 
     @column_a = matrix_params['column-A'].to_i
     @column_b = matrix_params['column-B'].to_i
+
+    if @column_a != @row_b
+      flash[:notice] = 'Column of Matrix A should be equal to row of Matrix B'
+      redirect_to new_matrix_calculator_path
+    end
   end
 
   def multiply
