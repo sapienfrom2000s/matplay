@@ -1,12 +1,12 @@
 <%= form_with url: matrix_calculator_template_path, data: { turbo: false } do |form| %>
   <%= form.label 'row-A', 'rows' %>
-  <%= form.number_field 'row-A', min: '1', value: '1' %>
+  <%= form.number_field 'row-A', min: '1', required: :true %>
   <%= form.label 'column-A', 'columns' %>
-  <%= form.number_field 'column-A', min: '1', value: '1' %>
+  <%= form.number_field 'column-A', min: '1', required: :true %>
 
   <%= form.label 'row-B', 'rows' %>
-  <%= form.number_field 'row-B', min: '1', value: '1' %>
+  <%= form.number_field 'row-B', min: '1', required: :true%>
   <%= form.label 'column-B', 'columns' %>
-  <%= form.number_field 'column-B', min: '1', value: '1' %>
+  <%= form.number_field 'column-B', min: '1', required: :true%>
   <%= form.submit 'Generate Template'%>
 <% end %>
