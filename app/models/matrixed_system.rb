@@ -1,6 +1,6 @@
 require 'matrix'
 
-class Mat
+class MatrixedSystem
   def self.form(name, values, rows, columns)
     n_array = Array.new(rows) { Array.new(columns) }
     (1..rows).each do |row|
