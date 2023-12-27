@@ -34,7 +34,7 @@ RSpec.describe "Matrix", type: :system do
       .and have_content('63 21 14').and have_content('9 0 2')
     end
 
-    it "gives product of A.B" do
+    it "flashes error" do
       visit new_matrix_calculator_path
 
       fill_in 'row-A', with: 1
@@ -45,7 +45,6 @@ RSpec.describe "Matrix", type: :system do
 
       click_button 'Generate Template'
 
-      click_button 'Multiply'
       expect(page).to have_content('Column of Matrix A should be equal to row of Matrix B')
     end
   end
