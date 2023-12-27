@@ -1,4 +1,4 @@
-class MultiplicationsController < ApplicationController
+class MatrixCalculatorController < ApplicationController
   def index; end
 
   def new; end
@@ -10,7 +10,7 @@ class MultiplicationsController < ApplicationController
     @column_b = matrix_params['column-B'].to_i
   end
 
-  def result
+  def multiply
     @matrix_a = MatrixedSystem.form('A', matrix_values, matrix_values[:row_a].to_i, matrix_values[:column_a].to_i)
     @matrix_b = MatrixedSystem.form('B', matrix_values, matrix_values[:row_b].to_i, matrix_values[:column_b].to_i)
 

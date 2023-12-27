@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :multiplications, only: [:index, :new]
-  post 'multiplication/template', to: 'multiplications#template'
-  post 'multiplication/result', to: 'multiplications#result'
+  resources :matrix_calculator, only: [:index, :new]
+  post 'matrix_calculator/template', to: 'matrix_calculator#template'
+  post 'matrix_calculator/multiply', to: 'matrix_calculator#multiply'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -1,4 +1,4 @@
-<%= form_with url: multiplication_template_path, data: { turbo: false } do |form| %>
+<%= form_with url: matrix_calculator_template_path, data: { turbo: false } do |form| %>
   <%= form.label 'row-A', 'rows' %>
   <%= form.number_field 'row-A', min: '1', value: '1' %>
   <%= form.label 'column-A', 'columns' %>

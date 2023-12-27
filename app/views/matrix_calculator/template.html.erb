@@ -1,0 +1,15 @@
+<%= form_with scope: :matrix, url: matrix_calculator_multiply_path, data: { turbo: false } do |form| %>
+  Matrix A
+  <br>
+  <%= render partial: "form", locals: {rows: @row_a, columns: @column_a, name: 'A', form: } %>
+
+  Matrix B
+  <br>
+  <%= render partial: "form", locals: {rows: @row_b, columns: @column_b, name: 'B', form: } %>
+  <br>
+  <%= form.hidden_field :row_a, value: @row_a %>
+  <%= form.hidden_field :row_b, value: @row_b %>
+  <%= form.hidden_field :column_a, value: @column_a %>
+  <%= form.hidden_field :column_b, value: @column_b %>
+  <%= form.submit 'Multiply'%>
+<% end %>  
