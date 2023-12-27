@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :multiplications, only: [:index, :new]
-  get 'multiplication/template', to: 'multiplications#template'
-  get 'multiplication/result', to: 'multiplications#result'
+  post 'multiplication/template', to: 'multiplications#template'
+  post 'multiplication/result', to: 'multiplications#result'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -1,4 +1,4 @@
-<%= form_with scope: :matrix, url: multiplication_result_path, method: :get do |form| %>
+<%= form_with scope: :matrix, url: multiplication_result_path, data: { turbo: false } do |form| %>
   Matrix A
   <br>
   <%= render partial: "matrix_form", locals: {rows: @row_a, columns: @column_a, name: 'A', form: } %>
